@@ -16,7 +16,7 @@ int fake_filldir(struct dir_context *ctx,const char *name,int namelen,
 filldir_t real_filldir = NULL;
 
 int fake_iterate(struct file *filp,struct dir_context *ctx){
-	printk("test_hook:fake_iterate:%s\n",filp -> f_dentry ->d_name.name);
+	printk("test_hook:fake_iterate:%s\n",filp -> f_path.dentry ->d_name.name);
 	real_filldir = ctx -> actor;
 	*((filldir_t *)&(ctx -> actor)) = (filldir_t)fake_filldir;
 	return real_iterate(filp,ctx);
